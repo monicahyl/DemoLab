@@ -21,7 +21,11 @@ public class SimpleFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("Remote Host:"+request.getRemoteHost());
+        System.out.println("Remote Address:"+request.getRemoteAddr());
 
+        // 放行
+        chain.doFilter(request, response);
     }
 
     @Override
